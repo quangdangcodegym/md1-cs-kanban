@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <title>Kanban</title>
+  </head>
+  <style>
+    .box.dragstart {
+      border-radius: 5rem;
+    }
+
+    .box.hide {
+      opacity: 0;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <div class="header-left">
+          <a href="main-menu.html"><i class="fa-solid fa-house"></i></a>
+          <a href="dashboard.html">CodeGym Ken</a>
+          <a href="template.html">Templates</a>
+        </div>
+        <div class="header-right">
+          <div class="icon-prof" onclick="handleClickProf()">
+            <button type="button">
+              <i
+                class="fa-regular fa-user"
+                id="iProfile"
+                onclick="handleClickProf()"
+              ></i>
+            </button>
+          </div>
+          <div class="profile-option">
+            <ul>
+              <li><a href="profile.html">Profile</a></li>
+              <li><a href="login.html">Log out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="task-title">
+        <div class="title-left">
+          <label for="">[BC-JAVA-2023] Bootcamp Preparation</label>
+          <a href="">Chart</a>
+        </div>
+        <div class="title-right">
+          <button type="button" onclick="handleClickSet()">
+            <i id="iSetting" class="fa-solid fa-gear"></i>
+          </button>
+          <ul class="setting">
+            <li><a href="">Settings</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-menu">
+        <div class="task-holder">
+          <div class="bar-week weekend-1">
+            <label for=""><i class="fa-solid fa-chevron-up"></i></label>
+            <button
+              style="font-weight: bold"
+              type="button"
+              onclick="handleClickTaskWeek('w1')"
+            >
+              Week 1
+            </button>
+          </div>
+          <div class="table-list" id="board-w1">
+            <div
+              class="table"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              id="backlog"
+            >
+              <h6>Backlog</h6>
+              <div class="list-item" data-board="backlog">
+                <!-- <div
+                  id="todotarget1"
+                  class="box"
+                  ondragstart="dragStart(event)"
+                  draggable="true"
+                >
+                  <button type="button" class="ui-state-default">A</button>
+                </div> -->
+                
+              </div>
+              <div class="add-card">
+                <button type="button" onclick="handleAddCard('backlog')">Add a card</button>
+              </div>
+              <!-- <div class="create-task">
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="Enter to add a new task"
+                ></textarea>
+                <button type="button">Create Task</button>
+              </div> -->
+            </div>
+            <div
+              class="table"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              id="today"
+            >
+              <h6>Today</h6>
+              <div class="list-item"  data-board="today"></div>
+              <div class="add-card">
+                <button type="button" onclick="handleAddCard('today')">Add a card</button>
+              </div>
+            </div>
+            <div
+              class="table"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              id="doing"
+            >
+              <h6>Doing</h6>
+              <div class="list-item" data-board="doing"></div>
+              <div class="add-card">
+                <button type="button" onclick="handleAddCard('doing')">Add a card</button>
+              </div>
+              
+            </div>
+            <div
+              class="table"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              id="reviewing" 
+            >
+              <h6>Reviewing</h6>
+              <div class="list-item"data-board="reviewing"></div>
+              <div class="add-card">
+                <button type="button" onclick="handleAddCard('reviewing')">Add a card</button>
+              </div>
+              
+            </div>
+            <div
+              class="table"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              id="done"
+            >
+              <h6>Done</h6>
+              <div class="list-item" data-board="done"></div>
+              <div class="add-card">
+                <button type="button" onclick="handleAddCard('done')">Add a card</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="task-holder">
+          <div class="bar-week weekend-2">
+            <label for=""><i class="fa-solid fa-chevron-up"></i></label>
+            <button
+              style="font-weight: bold"
+              type="button"
+              onclick="handleClickTaskWeek('w2')"
+            >
+              Week 2
+            </button>
+          </div>
+          <div class="table-list" id="board-w2">
+            <div
+              class="table"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              id="backlog"
+            >
+              <h6>Backlog</h6>
+              <div class="list-item" data-board="backlog">
+                <!-- <div
+                  id="todotarget1"
+                  class="box"
+                  ondragstart="dragStart(event)"
+                  draggable="true"
+                >
+                  <button type="button" class="ui-state-default">A</button>
+                </div> -->
+                
+              </div>
+              <div class="add-card">
+                <button type="button" onclick="handleAddCard('backlog')">Add a card</button>
+              </div>
+              <!-- <div class="create-task">
+                <textarea
+                  name=""
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="Enter to add a new task"
+                ></textarea>
+                <button type="button">Create Task</button>
+              </div> -->
+            </div>
+            <div
+              class="table"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              id="today"
+            >
+              <h6>Today</h6>
+              <div class="list-item"  data-board="today"></div>
+              <div class="add-card">
+                <button type="button" onclick="handleAddCard('today')">Add a card</button>
+              </div>
+            </div>
+            <div
+              class="table"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              id="doing"
+            >
+              <h6>Doing</h6>
+              <div class="list-item" data-board="doing"></div>
+              <div class="add-card">
+                <button type="button" onclick="handleAddCard('doing')">Add a card</button>
+              </div>
+              
+            </div>
+            <div
+              class="table"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              id="reviewing" 
+            >
+              <h6>Reviewing</h6>
+              <div class="list-item"data-board="reviewing"></div>
+              <div class="add-card">
+                <button type="button" onclick="handleAddCard('reviewing')">Add a card</button>
+              </div>
+              
+            </div>
+            <div
+              class="table"
+              ondrop="drop(event)"
+              ondragover="allowDrop(event)"
+              id="done"
+            >
+              <h6>Done</h6>
+              <div class="list-item" data-board="done"></div>
+              <div class="add-card">
+                <button type="button" onclick="handleAddCard('done')">Add a card</button>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../js/app.js"></script>
+    <script src="../js/main.js"></script>
+    
+  </body>
+</html>
+
+

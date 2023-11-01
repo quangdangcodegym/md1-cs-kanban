@@ -1,0 +1,215 @@
+.task-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 15px 5px 10px;
+  font-size: 20px;
+  color: white;
+}
+
+.title-right button {
+  color: white;
+  font-size: 20px;
+  background-color: transparent;
+  border: 0;
+}
+
+.title-right button:hover {
+  cursor: pointer;
+}
+
+.title-left a {
+  text-decoration: none;
+  color: white;
+}
+
+.setting {
+  background-color: #fff;
+  list-style: none;
+  width: 100px;
+  position: absolute;
+  top: 70pxpx;
+  right: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 3px 1px rgb(43, 43, 43);
+  flex-flow: column wrap;
+  padding-left: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  z-index: 9999;
+  display: none;
+}
+
+.setting li {
+  font-size: 17px;
+  text-decoration: none;
+  color: black;
+}
+
+.main-menu {
+  min-height: 90vh;
+  overflow: scroll;
+}
+
+.task-holder {
+  background-color: rgb(83, 171, 248);
+  width: 100%;
+  height: auto;
+  margin-bottom: 3px;
+}
+
+.bar-week {
+  height: 30px;
+  padding: 5px;
+}
+
+/* .table-list {
+  display: flex;
+} */
+
+.table-list {
+  background-color: #1b78ae;
+  display: none;
+}
+
+.table {
+  margin: 5px 4px;
+  width: 272px;
+  height: 100%;
+  background-color: rgb(215, 215, 215);
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.container div h6 {
+  font-size: 25px;
+  padding: 3px 7px 10px;
+  font-weight: 500;
+}
+
+.list-item {
+  margin: 0;
+  padding-left: 4px;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  min-height: 60px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.list-item div {
+  background-color: white;
+  color: black;
+  border: 0;
+  border-bottom: 0.2px solid grey;
+  border-left: 10px solid #4caf50;
+  border-radius: 4px;
+  outline: 0;
+  margin: 3px 4px 3px 0;
+  height: auto;
+  padding: 7px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+.list-item div:hover{
+  cursor: pointer;
+}
+
+.list-item button {
+  background-color: transparent;
+  border: 0;
+  font-size: 14px;
+}
+
+.bar-week button {
+  background-color: transparent;
+  border: 0;
+  color: white;
+  font-size: 14px;
+}
+
+.task-holder button:hover {
+  cursor: pointer;
+}
+
+.list-item button:hover {
+  cursor: pointer;
+}
+
+.container div .add-card {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.add-card button {
+  background-color: transparent;
+  border: 0;
+  color: rgb(111, 111, 111);
+  width: 100%;
+  text-align: left;
+  height: 100%;
+  padding: 10px;
+}
+
+.add-card button:hover {
+  cursor: pointer;
+  background-color: rgb(7, 254, 254, 0.2);
+  border-radius: 0 0 5px 5px;
+}
+
+.create-task {
+  padding: 10px 5px;
+  /* position: absolute; */
+  display: flex;
+  flex-direction: column;
+}
+
+.create-task div {
+  display: flex;
+}
+
+.create-task textarea {
+  width: 250px;
+  height: 80px;
+  padding: 0 5px;
+  resize: none;
+  border-radius: 5px;
+  border: 0;
+  border-bottom: 1px solid grey;
+}
+
+.create-task textarea:focus {
+  outline: none;
+}
+
+.create-task #btnCreate {
+  text-align: center;
+  width: 150px;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #4caf50;
+  color: white;
+  border: 0;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.create-task #btnCancel {
+  background-color: transparent;
+  border: 0;
+  color: gray;
+  padding-top: 15px;
+}
+
+.create-task div button:hover {
+  opacity: 0.5;
+}
+/* 
+.sort{
+  display: flex;
+  gap: 50px;
+} */

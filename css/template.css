@@ -1,0 +1,26 @@
+.template {
+  margin: 50px;
+  font-size: 25px;
+  box-shadow: 0 0 17px 2px #888888;
+  padding: 20px;
+}
+
+.template table {
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 20px;
+  font-size: 18px;
+  width: 97%;
+}
+
+.template table a {
+  color: black;
+  text-decoration: none;
+  display: block;
+}
+
+.template table th,
+td {
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
